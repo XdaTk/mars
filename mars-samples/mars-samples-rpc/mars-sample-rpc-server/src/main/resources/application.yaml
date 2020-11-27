@@ -1,0 +1,19 @@
+server:
+  port: 8092
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+  server:
+    port: 19092
+opentracing:
+  jaeger:
+    udp-sender:
+      host: 127.0.0.1
+      port: 6831
+    enable-b3-propagation: true
+    expand-exception-logs: true

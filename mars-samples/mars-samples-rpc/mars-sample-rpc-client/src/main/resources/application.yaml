@@ -1,0 +1,24 @@
+server:
+  port: 8091
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+  server:
+    port: 19091
+grpc:
+  client:
+    user:
+      address: discovery:/sample-api-server
+      negotiationType: PLAINTEXT
+opentracing:
+  jaeger:
+    udp-sender:
+      host: 127.0.0.1
+      port: 6831
+    enable-b3-propagation: true
+    expand-exception-logs: true

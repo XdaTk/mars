@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: spring-boot-admin
+  cloud:
+    consul:
+      discovery:
+        tags:
+          - management.port=${management.server.port}
+        management-port: ${management.server.port}
+      config:
+        data-key: "application.yaml"
+        format: YAML
+      port: 8500
+      host: 127.0.0.1
+  boot:
+    admin:
+      discovery:
+        ignored-services:
+          - "consul"
+          - "*-management"
+opentracing:
+  jaeger:
+    udp-sender:
+      host: 127.0.0.1
+      port: 6831
+    enable-b3-propagation: true
+    expand-exception-logs: true

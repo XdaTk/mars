@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+import "sunmao/rpc/common/big_integer.proto";
+
+package sunmao.rpc.common;
+
+option java_outer_classname = "BigDecimalProto";
+option java_package = "cloud.sunmao.framework.common.rpc";
+
+// Protobuf analog for java.math.BigDecimal.
+message BigDecimal {
+  int32 scale = 1;
+  BigInteger int_val = 2;
+}

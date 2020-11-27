@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>cloud.sunmao.framework</groupId>
+        <artifactId>mars-dependencies</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../mars-dependencies/pom.xml</relativePath>
+    </parent>
+    <artifactId>mars-boots</artifactId>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>mars-boot-parent</module>
+        <module>mars-boot-basic</module>
+        <module>mars-boot-actuator</module>
+        <module>mars-boot-rest</module>
+        <module>mars-boot-web</module>
+        <module>mars-boot-mybatis</module>
+        <module>mars-boot-rpc-client</module>
+        <module>mars-boot-rpc-server</module>
+    </modules>
+</project>

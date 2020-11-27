@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>cloud.sunmao.framework</groupId>
+    <artifactId>mars</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>mars-dependencies</module>
+        <module>mars-commons</module>
+        <module>mars-springs</module>
+        <module>mars-boots</module>
+        <module>mars-clouds</module>
+        <module>mars-extend</module>
+        <module>mars-samples</module>
+    </modules>
+
+    <properties>
+        <!--应用版本信息-->
+        <spring.boot.version>2.4.0</spring.boot.version>
+        <spring.cloud.version>Hoxton.SR9</spring.cloud.version>
+        <spring.cloud.opentracing.version>0.5.9</spring.cloud.opentracing.version>
+        <spring.cloud.opentracing.jaeger.version>3.2.2</spring.cloud.opentracing.jaeger.version>
+        <spring.boot.mybatis.version>2.1.4</spring.boot.mybatis.version>
+        <mybatis.version>3.5.6</mybatis.version>
+        <mybatis-spring.version>2.0.6</mybatis-spring.version>
+        <spring.grpc.version>2.10.1.RELEASE</spring.grpc.version>
+        <opentracing.grpc.version>0.2.3</opentracing.grpc.version>
+        <protobuf.version>3.14.0</protobuf.version>
+        <grpc.version>1.33.1</grpc.version>
+        <grpc.pgv.version>0.4.1</grpc.pgv.version>
+        <joda.version>2.10.6</joda.version>
+
+        <!--插件版本信息-->
+        <plugin.os.version>1.6.2</plugin.os.version>
+        <plugin.protobuf.version>0.6.1</plugin.protobuf.version>
+        <plugin.gitflow.version>1.15.0</plugin.gitflow.version>
+        <plugin.source.version>3.2.1</plugin.source.version>
+        <plugin.deploy.version>2.8.2</plugin.deploy.version>
+
+        <!--其它版本信息-->
+
+        <!--编译配置信息-->
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.amashchenko.maven.plugin</groupId>
+                <artifactId>gitflow-maven-plugin</artifactId>
+                <version>${plugin.gitflow.version}</version>
+                <configuration>
+                    <installProject>true</installProject>
+                    <verbose>true</verbose>
+                    <gitFlowConfig>
+                        <productionBranch>main</productionBranch>
+                        <developmentBranch>develop</developmentBranch>
+                        <featureBranchPrefix>feature/</featureBranchPrefix>
+                        <releaseBranchPrefix>release/</releaseBranchPrefix>
+                        <hotfixBranchPrefix>hotfix/</hotfixBranchPrefix>
+                        <supportBranchPrefix>support/</supportBranchPrefix>
+                        <versionTagPrefix>v</versionTagPrefix>
+                        <origin>origin</origin>
+                    </gitFlowConfig>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>${plugin.source.version}</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

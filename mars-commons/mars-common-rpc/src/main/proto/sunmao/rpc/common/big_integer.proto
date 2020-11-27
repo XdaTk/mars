@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package sunmao.rpc.common;
+
+option java_outer_classname = "BigIntegerProto";
+option java_package = "cloud.sunmao.framework.common.rpc";
+
+// Protobuf analog for java.math.BigInteger.
+message BigInteger {
+  bytes value = 1;
+}

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>mars-clouds</artifactId>
+        <groupId>cloud.sunmao.framework</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <artifactId>mars-cloud-monitor</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>cloud.sunmao.framework</groupId>
+            <artifactId>mars-cloud-basic</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cloud.sunmao.framework</groupId>
+            <artifactId>mars-boot-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.opentracing.contrib</groupId>
+            <artifactId>opentracing-spring-cloud-starter</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>io.opentracing.contrib</groupId>
+                    <artifactId>opentracing-spring-messaging-starter</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.opentracing.contrib</groupId>
+                    <artifactId>opentracing-spring-rabbitmq-starter</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.opentracing.contrib</groupId>
+                    <artifactId>opentracing-spring-cloud-jms-starter</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.opentracing.contrib</groupId>
+                    <artifactId>opentracing-spring-cloud-feign-starter</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.opentracing.contrib</groupId>
+                    <artifactId>opentracing-spring-cloud-hystrix-starter</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.opentracing.contrib</groupId>
+                    <artifactId>opentracing-spring-cloud-mongo-starter</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.opentracing.contrib</groupId>
+                    <artifactId>opentracing-spring-cloud-zuul-starter</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.opentracing.contrib</groupId>
+                    <artifactId>opentracing-spring-cloud-gateway-starter</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>io.opentracing.contrib</groupId>
+            <artifactId>opentracing-spring-jaeger-cloud-starter</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>

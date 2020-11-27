@@ -1,0 +1,43 @@
+syntax = "proto3";
+import "validate/validate.proto";
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/duration.proto";
+
+package cloud.sunmao.framework.sample.rpc.api;
+
+message HelloRequest {
+    string name = 1 [(validate.rules).string = {min_len: 1, max_len: 20}];
+}
+
+message HelloReply {
+    int32 id = 1;
+    string name = 2;
+    string nick_name =3;
+    google.protobuf.StringValue about = 4;
+    google.protobuf.BoolValue sex = 5;
+    google.protobuf.BytesValue bytes = 6;
+    google.protobuf.DoubleValue double = 7;
+    google.protobuf.Duration duration = 8;
+    google.protobuf.FloatValue float = 9;
+    google.protobuf.Int32Value int32 = 10;
+    google.protobuf.Int64Value int64 = 11;
+    google.protobuf.UInt32Value uint32 = 12;
+    google.protobuf.UInt64Value uint64 = 13;
+    google.protobuf.Timestamp date = 14;
+    enum Job {
+        STUDENT = 0;
+        WORKER = 1;
+    }
+    Job job = 15;
+}
+
+message HelloReplys {
+    repeated HelloReply replys = 1;
+}
+
+service User {
+    rpc SayHello (HelloRequest) returns (HelloReply) {
+    }
+}
+
